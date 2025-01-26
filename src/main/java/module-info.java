@@ -14,7 +14,7 @@ module com.fatidecoraciones.interfaz {
 
     opens com.fatidecoraciones.interfaz to javafx.fxml;
     opens com.fatidecoraciones.interfaz.models to com.fasterxml.jackson.databind, javafx.base;
-    opens com.fatidecoraciones.interfaz.controllers to javafx.fxml;
 
     exports com.fatidecoraciones.interfaz;
+    opens com.fatidecoraciones.interfaz.controllers.producto to javafx.fxml;
 }

@@ -19,11 +19,11 @@ public class Producto {
     }
 
     public Producto(Long id, String art, String nombre, double precio, Boolean esTela, Marca marca) {
-        this.id = id;
+        this.id = null;
         this.art = art;
         this.nombre = nombre;
         this.precio = precio;
-        this.esTela = esTela;
+        this.esTela = false;
         this.marca = marca;
     }
 }
