@@ -5,7 +5,6 @@ import com.fatidecoraciones.interfaz.services.ProductoService;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -114,6 +113,7 @@ public class ProductoController {
             System.out.println("Error al eliminar el producto: " + e.getMessage());
         }
     }
+
     private void loadProductos() {
         try {
             ObservableList<Producto> productos = FXCollections.observableArrayList(productoService.getProductos());
@@ -146,6 +146,7 @@ public class ProductoController {
             e.printStackTrace();
         }
     }
+
     @FXML
     private void nuevoProducto() throws Exception {
 

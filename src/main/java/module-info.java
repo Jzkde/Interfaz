@@ -12,9 +12,12 @@ module com.fatidecoraciones.interfaz {
     requires static lombok;
     requires com.fasterxml.jackson.databind;
 
+    exports com.fatidecoraciones.interfaz.controllers.principal to javafx.fxml;
+    exports com.fatidecoraciones.interfaz;
+
     opens com.fatidecoraciones.interfaz to javafx.fxml;
     opens com.fatidecoraciones.interfaz.models to com.fasterxml.jackson.databind, javafx.base;
-
-    exports com.fatidecoraciones.interfaz;
     opens com.fatidecoraciones.interfaz.controllers.producto to javafx.fxml;
+    opens com.fatidecoraciones.interfaz.controllers.principal to javafx.fxml;
+
 }
