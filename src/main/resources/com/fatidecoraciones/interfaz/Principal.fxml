@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fatidecoraciones.interfaz.controllers.principal.PrincipalController">
-   <TabPane layoutX="11.0" layoutY="7.0" prefHeight="383.0" prefWidth="582.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
+<AnchorPane prefHeight="452.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fatidecoraciones.interfaz.controllers.principal.PrincipalController">
+   <TabPane layoutX="11.0" layoutY="44.0" prefHeight="398.0" prefWidth="582.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="44.0">
        <Tab fx:id="tab1" text="Productos" />
-       <Tab fx:id="tab2" text="Cotizar Sistemas" />
+       <Tab fx:id="cotizarSisTab" text="Cotizar Sistemas" />
+       <Tab fx:id="cotizarTelasTab" text="Cotizar Telas" />
 
    </TabPane>
+   <MenuBar layoutY="2.0">
+     <menus>
+       <Menu mnemonicParsing="false" text="Productos">
+         <items>
+           <MenuItem mnemonicParsing="false" onAction="#irProductos" text="Lista" />
+             <MenuItem mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Edit">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Delete" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
 
 
 </AnchorPane>

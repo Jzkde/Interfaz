@@ -102,11 +102,6 @@ public class NuevoProductoController {
         }
     }
 
-    @FXML
-    private void cancelar() {
-        cerrarVentana();
-    }
-
     private void cerrarVentana() {
         Stage stage = (Stage) nombreField.getScene().getWindow();
         stage.close();

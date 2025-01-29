@@ -148,7 +148,7 @@ public class ProductoController {
     }
 
     @FXML
-    private void nuevoProducto() throws Exception {
+    public void nuevoProducto() throws Exception {
 
         // Llamar a la ventana de edición con un producto vacío
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/NuevoProducto.fxml"));
