@@ -1,4 +1,4 @@
-package com.fatidecoraciones.interfaz.controllers.producto;
+package com.fatidecoraciones.interfaz.controllers.productos;
 
 import com.fatidecoraciones.interfaz.models.Marca;
 import com.fatidecoraciones.interfaz.models.Producto;
@@ -26,7 +26,7 @@ public class EditarProductoController {
     @FXML
     private CheckBox esTelaCheckBox;
     private Producto producto;
-    private OnProductoEditListener editListener; // Callback
+    private OnProductoEditListener editListener;
 
     public void setEditListener(OnProductoEditListener editListener) {
         this.editListener = editListener;

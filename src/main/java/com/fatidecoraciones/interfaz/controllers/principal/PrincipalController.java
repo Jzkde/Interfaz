@@ -21,7 +21,7 @@ public class PrincipalController {
     private void initialize() {
         try {
             // Cargar el contenido de cada tab
-            loadTabContent(tab1, "/com/fatidecoraciones/interfaz/Producto.fxml");
+            loadTabContent(tab1, "/com/fatidecoraciones/interfaz/View/marcas/Marcas.fxml");
             loadTabContent(cotizarSisTab, "/com/fatidecoraciones/interfaz/CotizarSistemas.fxml");
             loadTabContent(cotizarTelasTab, "/com/fatidecoraciones/interfaz/CotizarTelas.fxml");
         } catch (IOException e) {
@@ -41,7 +41,7 @@ public class PrincipalController {
     @FXML
     private void irProductos() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/Producto.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/View/productos/Productos.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = new Stage();
@@ -54,9 +54,9 @@ public class PrincipalController {
     }
 
     @FXML
-    private void nuevo() {
+    private void nuevoProducto() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/NuevoProducto.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/View/productos/NuevoProducto.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root);
             Stage stage = new Stage();

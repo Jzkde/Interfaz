@@ -6,7 +6,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fatidecoraciones.interfaz.controllers.producto.ProductoController">
+<?import javafx.scene.layout.AnchorPane?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fatidecoraciones.interfaz.controllers.productos.ProductoController">
   <Button onAction="#nuevoProducto" prefWidth="103.0" text="Nuevo Producto">
       <VBox.margin>
          <Insets top="20.0" />

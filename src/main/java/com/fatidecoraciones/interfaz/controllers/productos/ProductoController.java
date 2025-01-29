@@ -1,4 +1,4 @@
-package com.fatidecoraciones.interfaz.controllers.producto;
+package com.fatidecoraciones.interfaz.controllers.productos;
 
 import com.fatidecoraciones.interfaz.models.Producto;
 import com.fatidecoraciones.interfaz.services.ProductoService;
@@ -39,7 +39,6 @@ public class ProductoController {
     private TableColumn<Producto, String> marcaColumn;
     @FXML
     private TableColumn<Producto, Void> accionesColumn;
-    private ObservableList<Producto> productos = FXCollections.observableArrayList();
 
     public void initialize() {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -104,16 +103,6 @@ public class ProductoController {
         loadProductos();
     }
 
-    private void eliminarProducto(Producto producto) {
-        try {
-            productoService.borrar(producto.getId()); // Llamar al servicio para eliminar el producto
-            productoTableView.getItems().remove(producto); // Eliminar de la tabla
-            System.out.println("Producto eliminado: " + producto.getNombre());
-        } catch (Exception e) {
-            System.out.println("Error al eliminar el producto: " + e.getMessage());
-        }
-    }
-
     private void loadProductos() {
         try {
             ObservableList<Producto> productos = FXCollections.observableArrayList(productoService.getProductos());
@@ -124,11 +113,21 @@ public class ProductoController {
         }
     }
 
+    private void eliminarProducto(Producto producto) {
+        try {
+            productoService.borrar(producto.getId()); // Llamar al servicio para eliminar el producto
+            productoTableView.getItems().remove(producto); // Eliminar de la tabla
+            System.out.println("Producto eliminado: " + producto.getNombre());
+        } catch (Exception e) {
+            System.out.println("Error al eliminar el producto: " + e.getMessage());
+        }
+    }
+
     @FXML
     private void editarProducto(Producto producto) {
         try {
             // Cargar el archivo FXML para la ventana de edición
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/EditarProducto.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/View/productos/EditarProducto.fxml"));
             Parent root = loader.load();
 
             // Obtener el controlador de la ventana de edición
@@ -151,7 +150,7 @@ public class ProductoController {
     public void nuevoProducto() throws Exception {
 
         // Llamar a la ventana de edición con un producto vacío
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/NuevoProducto.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/fatidecoraciones/interfaz/View/productos/NuevoProducto.fxml"));
         Parent root = loader.load();
 
         NuevoProductoController controller = loader.getController();

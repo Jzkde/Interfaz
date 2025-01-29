@@ -1,4 +1,4 @@
-package com.fatidecoraciones.interfaz.controllers.producto;
+package com.fatidecoraciones.interfaz.controllers.productos;
 
 import com.fatidecoraciones.interfaz.models.Marca;
 import com.fatidecoraciones.interfaz.models.Producto;

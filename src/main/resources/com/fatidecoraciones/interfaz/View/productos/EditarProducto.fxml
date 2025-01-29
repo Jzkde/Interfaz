@@ -7,7 +7,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="346.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fatidecoraciones.interfaz.controllers.producto.EditarProductoController">
+<AnchorPane prefHeight="346.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.fatidecoraciones.interfaz.controllers.productos.EditarProductoController">
    <TextField fx:id="nombreField" layoutX="213.0" layoutY="70.0" text="Nombre" />
    <TextField fx:id="artField" layoutX="35.0" layoutY="70.0" text="Articulo" />
    <TextField fx:id="precioField" layoutX="387.0" layoutY="70.0" text="Precio" />

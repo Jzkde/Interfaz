@@ -14,10 +14,11 @@ module com.fatidecoraciones.interfaz {
 
     exports com.fatidecoraciones.interfaz.controllers.principal to javafx.fxml;
     exports com.fatidecoraciones.interfaz;
+    exports com.fatidecoraciones.interfaz.controllers.marcas to javafx.fxml;
 
     opens com.fatidecoraciones.interfaz to javafx.fxml;
     opens com.fatidecoraciones.interfaz.models to com.fasterxml.jackson.databind, javafx.base;
-    opens com.fatidecoraciones.interfaz.controllers.producto to javafx.fxml;
+    opens com.fatidecoraciones.interfaz.controllers.productos to javafx.fxml;
     opens com.fatidecoraciones.interfaz.controllers.principal to javafx.fxml;
-
+    opens com.fatidecoraciones.interfaz.controllers.marcas to javafx.fxml;
 }

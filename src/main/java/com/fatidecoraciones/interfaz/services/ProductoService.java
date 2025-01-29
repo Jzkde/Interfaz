@@ -14,7 +14,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoService {
@@ -45,7 +44,7 @@ public class ProductoService {
         // Codificar el nombre de la marca
         String marcaId = URLEncoder.encode(marca, StandardCharsets.UTF_8.toString());
 
-        // Convertir el producto a JSON
+        // Convertir en JSON
         String jsonProducto = objectMapper.writeValueAsString(producto);
 
         // Preparar la solicitud HTTP PUT
@@ -55,7 +54,7 @@ public class ProductoService {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoOutput(true);
 
-        // Escribir el cuerpo de la solicitud (el producto en formato JSON)
+        // Escribir el cuerpo de la solicitud
         try (OutputStream outputStream = connection.getOutputStream()) {
             byte[] input = jsonProducto.getBytes("utf-8");
             outputStream.write(input, 0, input.length);
@@ -71,7 +70,7 @@ public class ProductoService {
         // Codificar el nombre de la marca
         String marcaId = URLEncoder.encode(marca, StandardCharsets.UTF_8.toString());
 
-        // Convertir el producto a JSON
+        // Convertiren JSON
         String jsonProducto = objectMapper.writeValueAsString(producto);
 
         // Preparar la solicitud HTTP POST
@@ -82,7 +81,7 @@ public class ProductoService {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoOutput(true);
 
-        // Escribir el cuerpo de la solicitud (el producto en formato JSON)
+        // Escribir el cuerpo de la solicitu
         try (OutputStream outputStream = connection.getOutputStream()) {
             byte[] input = jsonProducto.getBytes("utf-8");
             outputStream.write(input, 0, input.length);
@@ -108,20 +107,20 @@ public class ProductoService {
         }
     }
 
-    public void cotizar (List<Producto> productos, String tela, Float ancho, Float prop, String tipoConf) throws Exception {
+    public void cotizar(List<Producto> productos, String tela, Float ancho, Float prop, String tipoConf) throws Exception {
         // Codificar el nombre de la marca
         String telaN = URLEncoder.encode(tela, StandardCharsets.UTF_8.toString());
 
-            URL url = new URL(API_URL + "/cotizar?telaN=" + telaN+"&ancho="+ancho+"&prop="+prop+"&tipoConf="+tipoConf);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setDoOutput(true);
-            conn.setRequestMethod("POST");
-            conn.setRequestProperty("Content-Type", "application/json");
+        URL url = new URL(API_URL + "/cotizar?telaN=" + telaN + "&ancho=" + ancho + "&prop=" + prop + "&tipoConf=" + tipoConf);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setDoOutput(true);
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
 
-        // Convertir el producto a JSON
+        // Convertiren JSON
         String jsonProducto = objectMapper.writeValueAsString(productos);
 
-        // Escribir el cuerpo de la solicitud (el producto en formato JSON)
+        // Escribir el cuerpo de la solicitud
         try (OutputStream outputStream = conn.getOutputStream()) {
             byte[] input = jsonProducto.getBytes("utf-8");
             outputStream.write(input, 0, input.length);
